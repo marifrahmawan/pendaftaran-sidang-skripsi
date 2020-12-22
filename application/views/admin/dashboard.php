@@ -37,10 +37,10 @@
       <div class="row">
         <div class="col-lg-4 col-xs-6">
           <?php
-            $host = @mysql_connect("localhost", "root", "");
-            $db = mysql_select_db("db_skripsi");
-            $query = mysql_query("SELECT * FROM dosen");
-            $count = mysql_num_rows($query);
+            $host = @mysqli_connect("localhost", "root", "");
+            $db = mysqli_select_db($host, "db_skripsi");
+            $query = mysqli_query($host, "SELECT * FROM dosen");
+            $count = mysqli_num_rows($query);
           ?>
           <!-- small box -->
           <div class="small-box bg-aqua">
@@ -58,10 +58,10 @@
         <!-- ./col -->
         <div class="col-lg-4 col-xs-6">
           <?php
-            $host = @mysql_connect("localhost", "root", "");
-            $db = mysql_select_db("db_skripsi");
-            $query = mysql_query("SELECT * FROM mahasiswa");
-            $count = mysql_num_rows($query);
+            $host = @mysqli_connect($host, "localhost", "root", "");
+            $db = mysqli_select_db($host, "db_skripsi");
+            $query = mysqli_query($host, "SELECT * FROM mahasiswa");
+            $count = mysqli_num_rows($query);
           ?>
           <!-- small box -->
           <div class="small-box bg-yellow">
@@ -79,10 +79,10 @@
         <!-- ./col -->
         <div class="col-lg-4 col-xs-6">
           <?php
-            $host = @mysql_connect("localhost", "root", "");
-            $db = mysql_select_db("db_skripsi");
-            $query = mysql_query("SELECT * FROM user");
-            $count = mysql_num_rows($query);
+            $host = @mysqli_connect("localhost", "root", "");
+            $db = mysqli_select_db($host, "db_skripsi");
+            $query = mysqli_query($host, "SELECT * FROM user");
+            $count = mysqli_num_rows($query);
           ?>
           <!-- small box -->
           <div class="small-box bg-green">
