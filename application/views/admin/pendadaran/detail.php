@@ -58,8 +58,10 @@
                       <td width="1%"> : </td>
                       <td>
 												<?php
-													$query = mysql_query("SELECT * FROM dosen INNER JOIN seminar on seminar.pembimbing=dosen.niy where seminar.nim='$seminar->nim'");
-													while($row = mysql_fetch_array($query)){
+													$host = @mysqli_connect("localhost", "root", "");
+													$db = mysqli_select_db($host, "db_skripsi");
+													$query = mysqli_query($host, "SELECT * FROM dosen INNER JOIN seminar on seminar.pembimbing=dosen.niy where seminar.nim='$seminar->nim'");
+													while($row = mysqli_fetch_array($query)){
 														echo $row['nama_dsn'];
 													}
 												?>
@@ -70,8 +72,10 @@
                       <td width="1%"> : </td>
                       <td>
 												<?php
-													$query = mysql_query("SELECT * FROM dosen INNER JOIN seminar on seminar.penguji_1=dosen.niy where seminar.nim='$seminar->nim'");
-													while($row = mysql_fetch_array($query)){
+													$host = @mysqli_connect("localhost", "root", "");
+													$db = mysqli_select_db($host, "db_skripsi");
+													$query = mysqli_query($host, "SELECT * FROM dosen INNER JOIN seminar on seminar.penguji_1=dosen.niy where seminar.nim='$seminar->nim'");
+													while($row = mysqli_fetch_array($query)){
 														echo $row['nama_dsn'];
 													}
 												?>
@@ -82,8 +86,10 @@
                       <td width="1%"> : </td>
                       <td>
 												<?php
-													$query = mysql_query("SELECT * FROM dosen INNER JOIN seminar on seminar.penguji_2=dosen.niy where seminar.nim='$seminar->nim'");
-													while($row = mysql_fetch_array($query)){
+													$host = @mysqli_connect("localhost", "root", "");
+													$db = mysqli_select_db($host, "db_skripsi");
+													$query = mysqli_query($host, "SELECT * FROM dosen INNER JOIN seminar on seminar.penguji_2=dosen.niy where seminar.nim='$seminar->nim'");
+													while($row = mysqli_fetch_array($query)){
 														echo $row['nama_dsn'];
 													}
 												?>

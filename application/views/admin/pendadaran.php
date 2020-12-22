@@ -47,11 +47,11 @@
               <h3 class="box-title">Data Skripsi</h3>
               <?php
                 $user_session = $this->session->userdata('id_user');
-                $host = @mysql_connect("localhost", "root", "");
-                $db = mysql_select_db("db_skripsi");
-                $queryadmin = mysql_query("SELECT * FROM seminar");
-                $querymhs = mysql_query("SELECT * FROM seminar where nim ='$user_session'");
-                $count = mysql_num_rows($querymhs);
+                $host = @mysqli_connect("localhost", "root", "");
+                $db = mysqli_select_db($host, "db_skripsi");
+                $queryadmin = mysqli_query($host, "SELECT * FROM seminar");
+                $querymhs = mysqli_query($host, "SELECT * FROM seminar where nim ='$user_session'");
+                $count = mysqli_num_rows($querymhs);
                 if ($this->session->userdata('level') == 3) {
                   if ($count < 1){
               ?>
@@ -78,7 +78,7 @@
                 <tbody>
                   <?php
                     if($this->session->userdata('level') == 1){
-                      $i=1; while ($row = mysql_fetch_array($queryadmin)) {
+                      $i=1; while ($row = mysqli_fetch_array($queryadmin)) {
                   ?>
                   <!-- Seminar Untuk Administrator -->
                   <tr>
@@ -116,7 +116,7 @@
                       }
                     }
                     else{
-                      $i=1; while ($row = mysql_fetch_array($querymhs)) {
+                      $i=1; while ($row = mysqli_fetch_array($querymhs)) {
                   ?>
                   <!-- Seminar Untuk Mahasiswa -->
                   <tr>

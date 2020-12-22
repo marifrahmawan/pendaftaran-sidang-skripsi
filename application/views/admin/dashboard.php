@@ -58,7 +58,7 @@
         <!-- ./col -->
         <div class="col-lg-4 col-xs-6">
           <?php
-            $host = @mysqli_connect($host, "localhost", "root", "");
+            $host = @mysqli_connect("localhost", "root", "");
             $db = mysqli_select_db($host, "db_skripsi");
             $query = mysqli_query($host, "SELECT * FROM mahasiswa");
             $count = mysqli_num_rows($query);

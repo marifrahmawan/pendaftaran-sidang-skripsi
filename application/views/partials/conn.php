@@ -1,4 +1,4 @@
 <?php
-  $host = @mysql_connect("localhost", "root", "");
-  $db = mysql_select_db("db_skripsi");
+  $host = @mysqli_connect("localhost", "root", "");
+  $db = mysqli_select_db($host, "db_skripsi");
 ?>
